@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext } from "react";
 import { ContactsContext } from "../../providers/ContactsContext.jsx";
 import { updateContactSchema } from "./UpdateContactSchema.js";
+import { StyledUpdateForm } from "./StyledFormUpdate.js";
 
 export const UpdateContactForm = () => {
     const { updateContact, handleContact } = useContext(ContactsContext);
@@ -21,7 +22,7 @@ export const UpdateContactForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(submit)}>
+        <StyledUpdateForm onSubmit={handleSubmit(submit)}>
             <input
                 type="text"
                 defaultValue={handleContact.fullName}
@@ -52,6 +53,6 @@ export const UpdateContactForm = () => {
             />
             <span>{errors.nickName?.message}</span>
             <button type="submit">editar contato</button>
-        </form>
+        </StyledUpdateForm>
     );
 };

@@ -1,17 +1,16 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const StyledForm = styled.form`
+export const StyledUpdateForm = styled.form`
+    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 1.375rem;
+    gap: 0;
     padding: 2.625rem 1.375rem;
-    width: 95%;
-    max-width: 369px;
+    width: 100%;
     height: max-content;
-    background: #212529;
-    box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+    background-color: #f8f9fa;
     border-radius: 4px;
 
     input {
@@ -22,11 +21,11 @@ export const StyledForm = styled.form`
         gap: 8.14px;
 
         width: 100%;
-        height: 38.5px;
+        height: 2.1rem;
 
-        background:#343b41;
+        background: #f8f9fa;
 
-        border: 0.9772px solid #343b41;
+        border: 1px solid #868e96ff;
         border-radius: 3.20867px;
     }
 
@@ -37,7 +36,7 @@ export const StyledForm = styled.form`
         font-size: 16.2426px;
         line-height: 26px;
 
-        color: #868e96ff;
+        color: #121214;
     }
 
     input:focus {
@@ -46,49 +45,70 @@ export const StyledForm = styled.form`
             font-weight: 400;
             font-size: 16.2426px;
             line-height: 26px;
-            color: #f8f9fa;
+            color:#121214;
         }
-        color: #f8f9fa;
+        color:#121214;
     }
 
     label {
-        font-weight: 400;
-        font-size: 0.75rem;
-        line-height: 0px;
-
-        color:  #f8f9fa;
-    }
-
-    div {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: flex-start;
         width: 100%;
-        gap: 22px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        line-height: 0px;
+        color: #121214;
     }
 
     p {
         font-style: normal;
         font-weight: 400;
-        font-size: 1rem;
+        font-size: 12px;
         line-height: 22px;
-        color: #868e96ff;
+        color: #121214;
     }
 
     .errorWarn {
-        font-size: 0.75rem;
-        color: #ffd700;
+        color: #e83f5b;
     }
 
-    .link {
+    button {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        text-decoration: none;
         padding: 0px 22.3336px;
         gap: 10.15px;
+
+        width: 100%;
+        height: 38.5px;
+
+        background:var( --colorColorPrimary);
+        border: 1.2182px solid var( --colorColorPrimary);
+        border-radius: 4.06066px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+
+        color: #FFFFFF;
+    }
+
+    button:hover {
+        background:var(--colorColorPrimaryDisable);
+        border: 1.2182px solid var(--colorColorPrimaryDisable);
+    }
+
+    button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 22.3336px;
+        gap: 10.15px;
+        text-decoration: none;
 
         width: 100%;
         height: 38.5px;
@@ -105,8 +125,8 @@ export const StyledForm = styled.form`
         color: #000;
     }
 
-    .link:hover {
+    button:hover {
         background: #fcd700;
-        border: 1.2182px solid #fcd700;
+        border: 1.2182px solid #fcd700
     }
 `

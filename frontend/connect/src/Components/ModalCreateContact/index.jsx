@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CreateContactForm } from "../FormCreateContact/index.jsx";
 import { ContactsContext } from "../../providers/ContactsContext.jsx";
-import { StyledCreateModal } from "../ModalUpdateContact/StyledUpdateContactModal.js";
+import { StyledCreateModal } from "./StyledCreateContactModal.js"
 
 export const ModalCreateContact = () => {
 
@@ -10,9 +10,9 @@ export const ModalCreateContact = () => {
     return (
         <StyledCreateModal role="dialog">
             <div className="modal">
-                <div>
+                <div className="headerModalCreate">
                     <h3>Crie um novo contato</h3>
-                    <button onClick={() => setIsOpenModalCreate(false)}>x</button>
+                    <button className="closeBtn" onClick={() => setIsOpenModalCreate(false)}>x</button>
                 </div>
                 <CreateContactForm />
             </div>

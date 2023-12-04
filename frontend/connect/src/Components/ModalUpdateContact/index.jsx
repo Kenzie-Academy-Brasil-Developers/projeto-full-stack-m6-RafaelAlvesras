@@ -10,9 +10,9 @@ export const ModalUpdateContact = () => {
     return (
         <StyledUpdateModal role="dialog">
             <div className="modal">
-                <div>
+                <div className="headerModalCreate">
                     <h3>Atualize seu contato</h3>
-                    <button onClick={() => setIsOpenModalUpdate(false)}>x</button>
+                    <button className="closeBtn" onClick={() => setIsOpenModalUpdate(false)}>x</button>
                 </div>
                 <UpdateContactForm />
             </div>

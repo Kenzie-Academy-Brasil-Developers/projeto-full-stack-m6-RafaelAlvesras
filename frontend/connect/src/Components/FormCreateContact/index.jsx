@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext } from "react";
 import { ContactsContext } from "../../providers/ContactsContext.jsx";
+import { StyledCreateForm } from "./StyledFormCreate.js";
 
 export const CreateContactForm = () => {
     const { createContact } = useContext(ContactsContext);
@@ -20,37 +21,41 @@ export const CreateContactForm = () => {
         createContact(formData);
     };
     return (
-        <form onSubmit={handleSubmit(submit)}>
+        <StyledCreateForm onSubmit={handleSubmit(submit)}>
+            <label htmlFor="fullName">Nome</label>
             <input
                 type="text"
                 placeholder="Digite o nome do seu contato."
-                name="fullName"
+                id="fullName"
                 autoComplete="username"
                 {...register("fullName")}
             />
-            <span>{errors.fullName?.message}</span>
+            <span className="errorWarn">{errors.fullName?.message}</span>
+            <label htmlFor="email">E-mail</label>
             <input
                 type="email"
                 placeholder="Digite aqui o email do seu contato."
-                name="email"
+                id="email"
                 {...register("email")}
             />
-            <span>{errors.email?.message}</span>
+            <span className="errorWarn">{errors.email?.message}</span>
+            <label htmlFor="phoneNumber">Telefone</label>            
             <input
                 type="text"
                 placeholder="Digite o número de telefone."
-                name="phoneNumber"
+                id="phoneNumber"
                 {...register("phoneNumber")}
             />
-            <span>{errors.phoneNumber?.message}</span>
+            <span className="errorWarn">{errors.phoneNumber?.message}</span>
+            <label htmlFor="nickName">Apelido</label>  
             <input
                 type="text"
                 placeholder="Digite o apelido."
-                name="nickName"
+                id="nickName"
                 {...register("nickName")}
             />
-            <span>{errors.nickName?.message}</span>
+            <span className="errorWarn">{errors.nickName?.message}</span>
             <button type="submit">Criar contato</button>
-        </form>
+        </StyledCreateForm>
     );
 };
