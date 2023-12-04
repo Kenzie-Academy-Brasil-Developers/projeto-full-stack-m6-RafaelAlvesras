@@ -7,7 +7,7 @@ import {
 import AppError from "../errors/App.error";
 import { repositoryClient } from "../repositories";
 
-const create = async (req: Request, res: Response): Promise<Response> => {
+const createContact = async (req: Request, res: Response): Promise<Response> => {
     const clientId = res.locals.decoded.sub;
     const client = await repositoryClient.findOne({ where: { id: clientId } });
     console.log(clientId);
@@ -22,7 +22,7 @@ const create = async (req: Request, res: Response): Promise<Response> => {
     return res.status(201).json(contact);
 };
 
-const read = async (req: Request, res: Response): Promise<Response> => {
+const readContact = async (req: Request, res: Response): Promise<Response> => {
     try {
         const clientId = res.locals.decoded.sub;
         const contacts: ContactRead = await contactServices.read(clientId);
@@ -34,7 +34,7 @@ const read = async (req: Request, res: Response): Promise<Response> => {
     }
 };
 
-const partialUpdate = async (
+const contactPartialUpdate = async (
     req: Request,
     res: Response
 ): Promise<Response> => {
@@ -52,11 +52,11 @@ const partialUpdate = async (
     return res.status(200).json(contact);
 };
 
-const destroy = async (req: Request, res: Response): Promise<Response> => {
+const destroyContact = async (req: Request, res: Response): Promise<Response> => {
     const { contactId } = req.params;
     const clientId = res.locals.decoded.sub;
     await contactServices.destroy(clientId, contactId);
 
     return res.status(204).json();
 };
-export default { create, read, destroy, partialUpdate };
+export default { createContact, readContact, destroyContact, contactPartialUpdate };

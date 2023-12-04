@@ -6,7 +6,7 @@ export const loginController = async (
     req: Request,
     res: Response
 ): Promise<Response> => {
-    const login: LoginReturn = await loginServices.create(req.body);
+    const login: LoginReturn = await loginServices.createLoginToken(req.body);
     return res.status(200).json(login);
 };
 

@@ -7,7 +7,7 @@ import contactControllers from "../controllers/contact.controllers";
 import { validateBody } from "../middlewares/validateBody.middleware";
 import { validateToken } from "../middlewares/validateToken.middleware";
 import verifyContactId from "../middlewares/verifyContactId.middleware";
-import { verifyIdExists } from "../middlewares/verifyIdExists.middleware";
+// import { verifyIdExists } from "../middlewares/verifyIdExists.middleware";
 
 export const contactRouter: Router = Router();
 
@@ -15,14 +15,14 @@ contactRouter.post(
     "",
     validateBody(contactCreateSchema),
     validateToken,
-    contactControllers.create
+    contactControllers.createContact
 );
 
 contactRouter.get(
     "",
     validateToken,
     verifyContactId,
-    contactControllers.read);
+    contactControllers.readContact);
 
 // contactRouter.use("/:id", verifyIdExists);
 
@@ -31,12 +31,12 @@ contactRouter.patch(
     validateBody(contactUpdateSchema),
     validateToken,
     verifyContactId,
-    contactControllers.partialUpdate
+    contactControllers.contactPartialUpdate
 );
 
 contactRouter.delete(
     "/:id",
     validateToken,
     verifyContactId,
-    contactControllers.destroy
+    contactControllers.destroyContact
 );
