@@ -14,33 +14,34 @@ export const StyledSection = styled.section`
     height: 10rem;
     border-radius: 12px;
     
-    background-color: #999;
+    background-color: #f8f9fa;
     color: black;
-
-    button {
+  
+    .addNewContactBtn {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        padding: 1rem;
         width: 7rem;
         height: 7rem;
         text-align: center;
-        background-color: #555;
-        color: #fff;
+        background-color: #ffd700;
+        color: #000;
         border: none;
-        border-left: 1px solid #fff;
         border-radius: 12px;
         cursor: pointer;
         transition: background-color 0.3s;
         font-size: 1.25rem;
+        font-weight: 500;
     }
 
-    button:hover {
+    .addNewContactBtn:hover {
         border-left: none;
-        border-right: 1px solid #fff;
-        background-color: #666;
-        color: #fff;
+        border: none;
+        background-color: #000;
+        color: #ffd700;
     }
 
     .userInfosBox {
@@ -48,5 +49,18 @@ export const StyledSection = styled.section`
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+    }
+
+    @media (max-width: 700px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+
+        .addNewContactBtn {
+            width: 5rem;
+            height: 5rem;
+            font-weight: 400;
+            font-size: 0.75rem;
+        }
     }
 `;

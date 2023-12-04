@@ -6,5 +6,8 @@ export const StyledMain = styled.main`
     width: 100%;
     max-width: 1200px;
     gap: 2.5rem;
-    background-color: blue;
+
+    @media (max-width: 700px) {
+        padding: 0;
+    }
 `
