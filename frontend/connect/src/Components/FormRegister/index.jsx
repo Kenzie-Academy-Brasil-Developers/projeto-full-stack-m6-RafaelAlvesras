@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { UserContext } from "../../providers/UserContext.jsx";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { StyledForm } from "./StyledFormRegister.js";
 
 export const FormRegister = () => {
     const { registerClient } = useContext(UserContext);
@@ -22,7 +23,7 @@ export const FormRegister = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(submit)}>
+        <StyledForm onSubmit={handleSubmit(submit)}>
             <input
                 type="text"
                 placeholder="Digite aqui seu nome"
@@ -30,14 +31,14 @@ export const FormRegister = () => {
                 autoComplete="username"
                 {...register("fullName")}
             />
-            <span>{errors.fullName?.message}</span>
+            <span className="errorWarn">{errors.fullName?.message}</span>
             <input
                 type="email"
                 placeholder="Digite aqui seu email"
                 name="email"
                 {...register("email")}
             />
-            <span>{errors.email?.message}</span>
+            <span className="errorWarn">{errors.email?.message}</span>
             <input
                 type="password"
                 placeholder="Digite aqui sua senha"
@@ -45,17 +46,19 @@ export const FormRegister = () => {
                 autoComplete="current-password"
                 {...register("password")}
             />
-            <span>{errors.password?.message}</span>
+            <span className="errorWarn">{errors.password?.message}</span>
             <input
                 type="text"
                 placeholder="seu número de telefone"
                 name="phoneNumber"
                 {...register("phoneNumber")}
             />
-            <span>{errors.phone?.message}</span>
-            <button type="submit">Cadastrar</button>
-            <p>ou</p>
-            <Link to={"/"}>Home</Link>
-        </form>
+            <span className="errorWarn">{errors.phoneNumber?.message}</span>
+            <div>
+                <button className="link" type="submit">Cadastrar</button>
+                <p>ou</p>
+                <Link className="link" to={"/"}>Home</Link>
+            </div>
+        </StyledForm>
     );
 };

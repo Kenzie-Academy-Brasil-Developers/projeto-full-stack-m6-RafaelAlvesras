@@ -19,10 +19,8 @@ export const GlobalReset = createGlobalStyle`
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      
+      justify-content: space-between;     
       font-family: 'Inter', sans-serif;
-      background-color: black;
     }
 
     main {

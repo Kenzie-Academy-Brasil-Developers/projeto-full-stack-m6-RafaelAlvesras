@@ -8,8 +8,8 @@ export const StyledHeader = styled.header`
   width: 100vw;
   height: max-content;
   min-height: 7rem;
-  background-color: #000;
-  color: #ffd700;
+  background-color: white;
+  color: black;
 
   .container {
     display: flex;
@@ -20,13 +20,22 @@ export const StyledHeader = styled.header`
     height: 100%;
   }
 
+  .divLogo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 15rem;
+    gap:none;
+  }
+
   .logo {
     color: #000; 
     text-align: center;
-    padding: 20px;
-    background-color: #ffd700; 
     margin: 0;
-    border-radius: 50%;
+  }
+  
+  img {
+      width: 6rem;
     }
 
     button {

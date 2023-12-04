@@ -1,9 +1,10 @@
-import { loginSchema } from "./LoginSchema";
+import { loginSchema } from "./loginSchema.js";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserContext } from "../../providers/UserContext.jsx";
 import { Link } from "react-router-dom";
+import { StyledForm } from "./StyledFormLogin.js";
 
 export const FormLogin = () => {
 
@@ -24,7 +25,8 @@ export const FormLogin = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(submit)}>
+        <StyledForm onSubmit={handleSubmit(submit)}>
+            <label htmlFor="email">e-mail</label>
             <input
                 type="email"
                 placeholder="Digite aqui seu email"
@@ -32,7 +34,8 @@ export const FormLogin = () => {
                 autoComplete="username"
                 {...register("email")}
             />
-            <span>{errors.email?.message}</span>
+            <span className="errorWarn">{errors.email?.message}</span>
+            <label htmlFor="password">senha</label>
             <input
                 type="password"
                 placeholder="Digite aqui sua senha"
@@ -40,10 +43,12 @@ export const FormLogin = () => {
                 autoComplete="current-password"
                 {...register("password")}
             />
-            <span>{errors.password?.message}</span>
-            <button type="submit">Login</button>
-            <p>ou</p>
-            <Link to={"/registerPage"}>cadastre-se</Link>
-        </form>
+            <span className="errorWarn">{errors.password?.message}</span>
+            <div>
+                <button className="link" type="submit">Login</button>
+                <p>ou</p>
+                <Link to={"/registerPage"} className="link">cadastre-se</Link>
+            </div>
+        </StyledForm>
     );
 };

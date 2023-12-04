@@ -5,8 +5,6 @@ export const StyledMain = styled.main`
     flex-direction: column;
     width: 100%;
     max-width: 1200px;
-    
-    button {
-        
-    }
+    gap: 2.5rem;
+    background-color: blue;
 `
