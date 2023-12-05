@@ -50,14 +50,13 @@ export const StyledHeader = styled.header`
 
         border: none;
         border-radius: 12%;
-        font-weight: 700;
+        font-weight: 500;
         transition: background-color 0.3s;
     }
 
     button:hover {
       background-color: #000;
         color: #ffd700;
-        border: 1px solid #ffd700;
         border-radius: 12%;
     }
 `;

@@ -48,13 +48,17 @@ export const StyledSection = styled.section`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
         height: 100%;
     }
 
     @media (max-width: 700px) {
         flex-direction: column;
         align-items: center;
-        padding: 0;
+        height: 11rem;
+        padding:0;
+        padding-bottom: 1rem;
 
         .addNewContactBtn {
             width: 5rem;

@@ -9,5 +9,6 @@ export const StyledMain = styled.main`
 
     @media (max-width: 700px) {
         padding: 0;
+        gap: 1.5rem;
     }
 `

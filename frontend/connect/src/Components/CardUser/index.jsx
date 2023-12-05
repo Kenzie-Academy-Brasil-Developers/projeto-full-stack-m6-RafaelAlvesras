@@ -13,8 +13,8 @@ export const CardUser = () => {
                 <div className="userInfosBox">
                     <h1>Olá, {clientInfos.fullName} !</h1>
                     <div className="Userinfos">
-                        <p>email:{clientInfos.email}</p>
-                        <p>Telefone: {clientInfos.phoneNumber}</p>
+                        <p><strong>email</strong>:{clientInfos.email}</p>
+                        <p><strong>Telefone</strong>: {clientInfos.phoneNumber}</p>
                     </div>
                 </div>
                 <div>

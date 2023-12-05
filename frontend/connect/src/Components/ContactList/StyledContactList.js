@@ -17,19 +17,29 @@ export const StyledList = styled.ul`
     flex-wrap: wrap;
     gap: 1rem;
 
-    .emptyList{
-        display: flex;
-        align-items: center;
+    @media (max-width: 1181px) {
         justify-content: center;
     }
 
     @media (max-width: 768px) {
         width: 100%;
+        height: 250px;
+        max-height: 250px;
+        padding: 0;
     }
 `
 
 export const StyledText = styled.p`
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        font-weight: 400;
+    }
 `
