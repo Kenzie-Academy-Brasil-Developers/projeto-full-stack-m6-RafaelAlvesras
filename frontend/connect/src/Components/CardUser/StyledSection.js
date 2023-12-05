@@ -14,6 +14,7 @@ export const StyledSection = styled.section`
     height: 10rem;
     border-radius: 12px;
     
+    box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
     background-color: #f8f9fa;
     color: black;
   

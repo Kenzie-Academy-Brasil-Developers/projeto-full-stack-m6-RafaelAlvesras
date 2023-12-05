@@ -21,13 +21,24 @@ export const StyledContacCard = styled.li`
         width: 80%;
     }
 
+    .divButtonsLogo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
     .divButtons {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        gap: 1.5rem;
+        gap: 0.5rem;
         height: 100%;
         width: 20%;
+    }
+
+    img {
+        width: 2rem;
     }
 
     button {

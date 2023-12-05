@@ -18,6 +18,7 @@ export const StyledFooter = styled.footer`
     width: 100%;
     max-width: 1200px;
     height: 100%;
+    padding-right: 1rem;
 
     font-size: 0.8rem;
     color: #999;
